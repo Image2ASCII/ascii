@@ -5,10 +5,6 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
