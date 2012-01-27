@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>info.kellett.ed</groupId>
+  <groupId>com.github.image2ascii</groupId>
   <artifactId>ascii</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
@@ -12,7 +12,6 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.jar.mainclass>info.kellett.ed.ascii.App</maven.jar.mainclass>
   </properties>
 
   <dependencies>
@@ -34,7 +33,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>info.kellett.ed.ascii.App</mainClass>    
+              <mainClass>com.github.image2ascii.ascii.App</mainClass>    
             </manifest>  
           </archive>
         </configuration>
