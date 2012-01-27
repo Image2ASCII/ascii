@@ -1,4 +1,4 @@
-package info.kellett.ed.ascii;
+package com.github.image2ascii.ascii;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -10,10 +10,12 @@ import java.util.ArrayList;
 public class Mapper {
     final BufferedImage img;
     final CharPicker cp;
+    final CharTransformer ct;
     
-    public Mapper(BufferedImage img, CharPicker cp) {
+    public Mapper(BufferedImage img, CharPicker cp, CharTransformer ct) {
         this.img = img;
         this.cp = cp;
+        this.ct = ct;
     }
     
     public String[] getLines(int cols) {
@@ -24,7 +26,12 @@ public class Mapper {
         for (int j = 0; (j + chary) < img.getHeight(); j += chary) {
             String s = "";
             for (int i = 0; (i + charx) < img.getWidth(); i += charx) {
-                s += cp.bestMatch(img.getSubimage(i, j, charx, chary));
+                if (ct != null) {
+                    s += ct.getString(cp.bestMatch(img.getSubimage(i, j, charx, chary)));
+                }
+                else {
+                    s += cp.bestMatch(img.getSubimage(i, j, charx, chary));
+                }
             }
             l.add(s);
         }

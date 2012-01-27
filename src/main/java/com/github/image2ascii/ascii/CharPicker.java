@@ -1,4 +1,4 @@
-package info.kellett.ed.ascii;
+package com.github.image2ascii.ascii;
 
 import java.awt.image.BufferedImage;
 
@@ -7,5 +7,5 @@ import java.awt.image.BufferedImage;
  * @author Ed
  */
 public interface CharPicker {
-    public char bestMatch(BufferedImage img);
+    public Pair<Character,Integer> bestMatch(BufferedImage img);
 }

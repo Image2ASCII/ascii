@@ -1,4 +1,4 @@
-package info.kellett.ed.ascii;
+package com.github.image2ascii.ascii;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -26,7 +26,7 @@ public class App
         catch (IOException ex) {
             throw new RuntimeException(ex);
         }
-        Mapper m = new Mapper(img, new GrayscaleCharPicker());
+        Mapper m = new Mapper(img, new GrayscaleCharPicker(), new HtmlCharTransformer());
         String[] lines = m.getLines(300);
         for (String s : lines) {
             System.out.println(s);
