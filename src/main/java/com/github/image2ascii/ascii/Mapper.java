@@ -30,7 +30,7 @@ public class Mapper {
                     s += ct.getString(cp.bestMatch(img.getSubimage(i, j, charx, chary)));
                 }
                 else {
-                    s += cp.bestMatch(img.getSubimage(i, j, charx, chary));
+                    s += cp.bestMatch(img.getSubimage(i, j, charx, chary)).A;
                 }
             }
             l.add(s);

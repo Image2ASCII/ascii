@@ -26,7 +26,7 @@ public class App
         catch (IOException ex) {
             throw new RuntimeException(ex);
         }
-        Mapper m = new Mapper(img, new GrayscaleCharPicker(), new HtmlCharTransformer());
+        Mapper m = new Mapper(img, new GrayscaleCharPicker(), null);
         String[] lines = m.getLines(300);
         for (String s : lines) {
             System.out.println(s);
