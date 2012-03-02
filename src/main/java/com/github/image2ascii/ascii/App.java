@@ -11,7 +11,7 @@ public class App
     {
         if (args.length < 1) {
             System.err.println("Must supply at least 1 argument!");
-            return;
+            throw new RuntimeException();
         }
         
         BufferedImage img;
@@ -27,9 +27,11 @@ public class App
             throw new RuntimeException(ex);
         }
         Mapper m = new Mapper(img, new GrayscaleCharPicker(), new HtmlCharTransformer());
-        String[] lines = m.getLines(300);
+        String[] lines = m.getLines(600);
+        System.out.println("<pre style=\"font-size:30%\">");
         for (String s : lines) {
             System.out.println(s);
         }
+        System.out.println("</pre>");
     }
 }

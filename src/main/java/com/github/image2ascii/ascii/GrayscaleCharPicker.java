@@ -18,6 +18,12 @@ public class GrayscaleCharPicker implements CharPicker {
         }
         int size = (img.getWidth() * img.getHeight());
         double average = sum / size;
+        double mod = average;
+        while (mod > 0.2D) mod -= 0.2D;
+        double scale = mod * 2.5D + 0.5D;
+        if (scale >= 0.0D && scale < 1.0D) {
+            sum1 *= scale; sum2 *= scale; sum3 *= scale;
+        }
         int color = (((int)sum1 / size)) | ((((int)sum2 / size) & 0xFF) << 8) | ((((int)sum3 / size) & 0xFF) << 16);
         if (average >= 0.8) {
             return new Pair(' ', color);
