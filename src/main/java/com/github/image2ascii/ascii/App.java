@@ -26,7 +26,6 @@ public class App
         catch (IOException ex) {
             throw new RuntimeException(ex);
         }
-        Mapper m = new Mapper(img, new GrayscaleCharPicker(), new HtmlCharTransformer());
         String[] lines = m.getLines(600);
         System.out.println("<pre style=\"font-size:30%\">");
         for (String s : lines) {
