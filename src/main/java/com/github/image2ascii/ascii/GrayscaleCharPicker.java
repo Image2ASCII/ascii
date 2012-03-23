@@ -19,20 +19,65 @@ public class GrayscaleCharPicker implements CharPicker {
         int size = (img.getWidth() * img.getHeight());
         double average = sum / size;
         int color = (((int)sum1 / size)) | ((((int)sum2 / size) & 0xFF) << 8) | ((((int)sum3 / size) & 0xFF) << 16);
-        if (average >= 0.8) {
-            return new Pair(' ', color);
+        if (average >= 0.95) {
+            return new Pair('#', color);
         }
-        else if (average >= 0.6) {
-            return new Pair('.', color);
+        else if (average >= 0.9) {
+            return new Pair('@', color);
         }
-        else if (average >= 0.4) {
-            return new Pair('+', color);
+        else if (average >= 0.85) {
+            return new Pair('%', color);
         }
-        else if (average > 0.2) {
-            return new Pair('$', color);
+        else if (average > 0.8) {
+            return new Pair('&', color);
+        }
+        else if (average > 0.75) {
+        	return new Pair('£', color);
+        }
+        else if (average > 0.7){
+        	return new Pair('?', color);
+        }
+        else if (average > 0.65){
+        	return new Pair('$', color);
+        }
+        else if (average > 0.6){
+        	return new Pair('/', color);
+        }
+        else if (average > 0.55){
+        	return new Pair('{', color);
+        }
+        else if (average > 0.5){
+        	return new Pair('}', color);
+        }
+        else if (average > 0.45){
+        	return new Pair('[', color);
+        }
+        else if (average > 0.4){
+        	return new Pair(']', color);
+        }
+        else if (average > 0.35){
+        	return new Pair('(', color);
+        }
+        else if (average > 0.3){
+        	return new Pair(')', color);
+        }
+        else if (average > 0.25){
+        	return new Pair ('+', color);
+        }
+        else if (average > 0.2){
+        	return new Pair ('=', color);
+        }
+        else if (average > 0.15){
+        	return new Pair (';', color);
+        }
+        else if (average > 0.1){
+        	return new Pair (',', color);
+        }
+        else if (average > 0.05){
+        	return new Pair ('.', color);
         }
         else {
-            return new Pair('#', color);
+            return new Pair(' ', color);
         }
     }
 }
